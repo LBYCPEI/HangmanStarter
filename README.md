@@ -1,7 +1,7 @@
 # Hangman Starter Template
 
 Tested on:
-- IntelliJ Ultimate 2020.2
+- IntelliJ Ultimate 2023 
 
 ## Getting Started:
 
@@ -18,7 +18,7 @@ Tested on:
         1. Make sure you have dict.txt, large.txt, oneword.txt, small.txt, twowords.txt, wordlengths.txt
         2. This is where you would store your additional image and sounds for Task 5
     - Under lib directory
-        1. Make sure you have *SPL.jar* or *cpei.jar*
+        1. Make sure you have *spl.jar* or *cpei.jar*
     - Under File > Project Structure
         1. Go to Project Settings > Project
             - Under Project SDK, make Java (your SDK version, e.g. 18) is selected.
