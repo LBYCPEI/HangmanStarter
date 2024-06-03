@@ -1,9 +1,22 @@
 import acm.program.*;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Hangman extends ConsoleProgram {
+
+    // dimensions of window
+    private static final int APPLICATION_WIDTH = 1080;
+    private static final int APPLICATION_HEIGHT = 640;
+
+
+
 
     public void run() {
         // TODO: write this method
+        // Example:
+        displayHangman(0);
     }
 
     // TODO: comment this method
@@ -32,7 +45,23 @@ public class Hangman extends ConsoleProgram {
 
     // TODO: comment this method
     private void displayHangman(int guessCount) {
-        // TODO: write this method
+        File file = new File("assets/display" + guessCount + ".txt");
+        Scanner scanner;
+        try {
+            scanner = new Scanner(file);
+            int line_counter = 1;
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                println(line);
+                canvas.printText(line);
+//                canvas.printDisplay(data, line_counter);
+                line_counter++;
+            }
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
     }
 
     // TODO: comment this method
@@ -48,6 +77,7 @@ public class Hangman extends ConsoleProgram {
 
     public void init() {
         canvas = new HangmanCanvas();
+        setSize(APPLICATION_WIDTH, APPLICATION_HEIGHT);
         add(canvas);
         canvas.reset();  // sample canvas method call
         println("Hello LBYCPEI!");

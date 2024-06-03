@@ -31,14 +31,12 @@ public class HangmanCanvas extends GCanvas {
         GLabel nextMessage = new GLabel("This is the next line!");
         textY += TEXT_HEIGHT;
         add(nextMessage,  textX , textY );
-
-        printText("Custom println()");
-
         printText("Custom println()");
     }
 
     public void printText(String text){
         GLabel line = new GLabel(text);
+        line.setFont("Monospaced-plain-12");
         textY += TEXT_HEIGHT;
         add(line,  textX , textY );
     }
